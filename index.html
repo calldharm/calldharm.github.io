@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharmendra Singh - Professional Profile</title>
+    <title>Dharmendra Singh - Welcome</title>
     <style>
         * {
             margin: 0;
@@ -13,159 +13,116 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
         
         .container {
-            max-width: 800px;
-            margin: 0 auto;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            padding: 60px 40px;
             text-align: center;
         }
         
-        .header h1 {
+        h1 {
+            color: #667eea;
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         
-        .header p {
+        p {
+            color: #555;
             font-size: 1.1em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        section {
             margin-bottom: 30px;
+            line-height: 1.8;
         }
         
-        section h2 {
-            color: #667eea;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        .info-item {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            border-radius: 4px;
-        }
-        
-        .info-item strong {
-            color: #667eea;
-        }
-        
-        .contact-links {
+        .button-group {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .contact-links a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        
-        .contact-links a:hover {
-            background: #764ba2;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        .skills {
-            display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            margin-top: 40px;
         }
         
-        .skill-tag {
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
             background: #667eea;
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
+        }
+        
+        .btn-primary:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .nav-links {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+        
+        .nav-links p {
+            margin: 15px 0;
+        }
+        
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Dharmendra Singh</h1>
-            <p>Professional Profile</p>
+        <h1>Welcome! 👋</h1>
+        <p>Hi, I'm <strong>Dharmendra Singh</strong>. This is my personal GitHub Pages site.</p>
+        
+        <div class="button-group">
+            <a href="index-1.html" class="btn btn-primary">View Full Profile</a>
+            <a href="https://github.com/calldharm" class="btn btn-secondary" target="_blank">Visit GitHub</a>
         </div>
         
-        <div class="content">
-            <section>
-                <h2>About Me</h2>
-                <p>Welcome to my professional profile. I'm passionate about technology, development, and creating meaningful digital solutions. This is my personal space to showcase my work, skills, and experiences.</p>
-            </section>
-            
-            <section>
-                <h2>Contact Information</h2>
-                <div class="info-item">
-                    <strong>GitHub:</strong> <a href="https://github.com/calldharm" target="_blank">@calldharm</a>
-                </div>
-                <div class="info-item">
-                    <strong>Repository:</strong> calldharm/calldharm.github.io
-                </div>
-            </section>
-            
-            <section>
-                <h2>Skills & Expertise</h2>
-                <div class="skills">
-                    <span class="skill-tag">Web Development</span>
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">Version Control</span>
-                    <span class="skill-tag">Open Source</span>
-                </div>
-            </section>
-            
-            <section>
-                <h2>Get Started</h2>
-                <p>This is your GitHub Pages site! You can customize this profile by editing the index.html file in your repository. Add your own content, projects, and achievements to make it uniquely yours.</p>
-            </section>
-            
-            <div class="contact-links">
-                <a href="https://github.com/calldharm" target="_blank">Visit GitHub Profile</a>
-            </div>
+        <div class="nav-links">
+            <p>Quick Links:</p>
+            <a href="index-1.html">Profile</a>
+            <a href="https://github.com/calldharm" target="_blank">GitHub</a>
         </div>
-        
-        <footer>
-            <p>&copy; 2026 Dharmendra Singh. All rights reserved.</p>
-        </footer>
     </div>
 </body>
 </html>
