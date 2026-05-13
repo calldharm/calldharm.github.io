@@ -1,182 +1,210 @@
-This is a modern, single-file "Profile Portfolio" designed with a clean, executive aesthetic. It uses **Tailwind CSS** for styling (via CDN) and **Lucide Icons** to give it that premium, high-tech Cisco/Startup feel.
-
-The layout highlights your dual identity as an elite Technical Lead and your personal passions (Gardening, Carpentry, Fatherhood) to make the profile feel authentic and grounded.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharmendra Singh | Tech Lead & Innovator</title>
+    <title>Dharmendra Singh | Technical Lead Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-        .gradient-text { background: linear-gradient(90deg, #0070d2, #00b4db); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .skill-tag { @apply px-3 py-1 bg-slate-100 border border-slate-200 rounded text-xs font-medium text-slate-700; }
+        .section-title { @apply text-3xl font-bold mb-8 flex items-center gap-3; }
+        .experience-card { @apply bg-white p-8 rounded-2xl border border-slate-200 shadow-sm mb-8; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
 
-    <nav class="sticky top-0 z-50 glass border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-tight text-blue-600">DS.</span>
-            <div class="space-x-8 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="max-w-6xl mx-auto px-6 pt-20 pb-32 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-        <div class="md:col-span-2">
-            <h1 class="text-5xl font-bold mb-4">Dharmendra Singh</h1>
-            <h2 class="text-2xl font-semibold text-blue-600 mb-6">Technical Lead @ Cisco | Gen AI Innovator</h2>
-            <p class="text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                17+ years of architecting scalable enterprise solutions. Expert in React, Full-Stack engineering, and cloud ecosystems. Passionate about <span class="font-semibold italic">UI/UX, loose coupling, and modularity.</span>
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <div class="flex items-center text-slate-500 text-sm">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i> Morrisville, NC
-                </div>
-                <div class="flex items-center text-slate-500 text-sm">
-                    <i data-lucide="briefcase" class="w-4 h-4 mr-2"></i> 17+ Years Experience
-                </div>
-                <div class="flex items-center text-slate-500 text-sm">
-                    <i data-lucide="award" class="w-4 h-4 mr-2"></i> AWS & Azure Certified
-                </div>
-            </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="w-64 h-64 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 p-1">
-                <div class="w-full h-full rounded-2xl bg-white flex items-center justify-center">
-                    <i data-lucide="user" class="w-32 h-32 text-blue-100"></i>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="bg-white py-24">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <header class="bg-white border-b border-slate-200 pt-16 pb-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8">
                 <div>
-                    <h3 class="text-sm font-bold uppercase tracking-widest text-blue-500 mb-4">The Persona</h3>
-                    <p class="text-xl leading-relaxed text-slate-700">
-                        "A <span class="text-slate-900 font-semibold">Developer</span> by day, <span class="text-green-600 font-semibold">Gardener</span> by evening, <span class="text-blue-600 font-semibold">Father</span> by night, and an amateur <span class="text-orange-700 font-semibold">Carpenter</span> on weekends."
-                    </p>
-                </div>
-                <div class="space-y-4 text-slate-600">
-                    <p>I am a non-negotiable tester and UI designer who believes in strategic design. My journey spans from building IoT ecosystems for Senior Care to architecting Hybrid Cloud solutions at Cisco scale.</p>
-                    <div class="flex gap-4">
-                        <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">Cooking</span>
-                        <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">Trekking</span>
-                        <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">Infrastructure</span>
-                        <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">IoT</span>
+                    <h1 class="text-4xl font-extrabold tracking-tight text-slate-900">Dharmendra Singh</h1>
+                    <p class="text-xl text-blue-600 font-semibold mt-2">Technical Lead @ Cisco | UI/UX Expert | Gen AI Innovator</p>
+                    <div class="flex flex-wrap gap-4 mt-6 text-sm text-slate-500">
+                        <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4"></i> Morrisville, NC</span>
+                        <span class="flex items-center gap-1"><i data-lucide="mail" class="w-4 h-4"></i> Technical Lead & Architect</span>
+                        <span class="flex items-center gap-1"><i data-lucide="shield-check" class="w-4 h-4"></i> AWS & Azure AI Certified</span>
                     </div>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 max-w-sm">
+                    <h3 class="font-bold text-slate-800 mb-2 italic">"Developer by day, Gardener by evening, Father by night, and amateur Carpenter on weekends."</h3>
+                    <p class="text-xs text-slate-500">Passionate about UI/UX, code reusability, loose coupling, and strategic design.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="projects" class="py-24 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-12">Featured Innovation</h3>
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl flex flex-col md:flex-row gap-10">
-                <div class="md:w-1/3">
-                    <div class="bg-blue-600 rounded-2xl aspect-video flex items-center justify-center text-white font-bold">
-                        HACKATHON 2025
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <section class="mb-20">
+            <h2 class="section-title"><i data-lucide="user-check" class="text-blue-600"></i> Professional Summary</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 space-y-4 text-slate-700">
+                    <p>17+ years in SDLC specializing in <strong>Full-stack, UI, and AI-driven architecture</strong>. Expert in building next-gen hybrid cloud solutions that drive re-usability, modularity, and cost-savings at enterprise scale.</p>
+                    <p>Proven track record in mentoring global teams (14+ members) across US, India, China, and UK, delivering quality features within 2-week sprints while maintaining rigorous standards for <strong>Jest unit testing, Sonar quality, and security.</strong></p>
+                </div>
+                <div class="bg-blue-600 text-white p-6 rounded-2xl shadow-lg">
+                    <h4 class="font-bold mb-4">Core Philosophy</h4>
+                    <ul class="text-sm space-y-2 opacity-90">
+                        <li>• Non-negotiable Tester & UI Designer</li>
+                        <li>• Strategic Design & Loose Coupling</li>
+                        <li>• Human-in-the-loop AI integration</li>
+                        <li>• Scalable IoT Fleet Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-20">
+            <h2 class="section-title"><i data-lucide="code-2" class="text-blue-600"></i> Expertise & Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="space-y-3">
+                    <h4 class="font-bold text-sm uppercase text-slate-400">Frontend</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">ReactJS</span> <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Sencha ExtJS</span> <span class="skill-tag">AngularJS</span>
+                        <span class="skill-tag">Kendo UI</span> <span class="skill-tag">HTML5/CSS3</span>
+                        <span class="skill-tag">Bootstrap</span> <span class="skill-tag">jQuery</span>
                     </div>
                 </div>
-                <div class="md:w-2/3">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="text-2xl font-bold">Cisco AI Hackathon: DocEngine</h4>
-                        <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-bold">Winner / Lead</span>
+                <div class="space-y-3">
+                    <h4 class="font-bold text-sm uppercase text-slate-400">Gen AI & Cloud</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">OpenAI</span> <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">Prompt Engineering</span> <span class="skill-tag">Vector DB</span>
+                        <span class="skill-tag">AWS bedrock</span> <span class="skill-tag">Azure AI</span>
+                        <span class="skill-tag">Docker/K8s</span>
                     </div>
-                    <p class="text-slate-600 mb-6">Led the architecture of an AI-driven "Human-in-the-Loop" Support Agent. Integrated OpenAI LLMs, Vector DBs, and Webex APIs to create a perpetual machine learning loop.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-[10px] border border-slate-200 px-2 py-1 rounded bg-slate-50">Python FastAPI</span>
-                        <span class="text-[10px] border border-slate-200 px-2 py-1 rounded bg-slate-50">OpenAI</span>
-                        <span class="text-[10px] border border-slate-200 px-2 py-1 rounded bg-slate-50">Agentic Design</span>
-                        <span class="text-[10px] border border-slate-200 px-2 py-1 rounded bg-slate-50">Webex Bot</span>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-bold text-sm uppercase text-slate-400">Backend/Data</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Node.js</span> <span class="skill-tag">Python FastAPI</span>
+                        <span class="skill-tag">Django</span> <span class="skill-tag">.NET MVC</span>
+                        <span class="skill-tag">MongoDB</span> <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Tableau</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-bold text-sm uppercase text-slate-400">Tools</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">GitHub</span> <span class="skill-tag">JIRA/Asana</span>
+                        <span class="skill-tag">Jenkins</span> <span class="skill-tag">BitBucket</span>
+                        <span class="skill-tag">Visual Studio</span> <span class="skill-tag">Postman</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-16 text-center">Tech Stack & Expertise</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-6 rounded-2xl bg-blue-50 border border-blue-100">
-                    <i data-lucide="layout" class="text-blue-600 mb-4"></i>
-                    <h5 class="font-bold mb-2">Frontend & UX</h5>
-                    <p class="text-sm text-slate-500">React, TypeScript, Sencha ExtJS, Kendo UI, Tailwind, HTML5/CSS3 Expert.</p>
+        <section id="experience" class="mb-20">
+            <h2 class="section-title"><i data-lucide="briefcase" class="text-blue-600"></i> Professional Journey</h2>
+            
+            <div class="experience-card">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">Technical Team Lead</h3>
+                        <p class="text-blue-600 font-medium">Cisco</p>
+                    </div>
+                    <span class="text-sm bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Jun 2020 — Present</span>
                 </div>
-                <div class="p-6 rounded-2xl bg-purple-50 border border-purple-100">
-                    <i data-lucide="cpu" class="text-purple-600 mb-4"></i>
-                    <h5 class="font-bold mb-2">Generative AI</h5>
-                    <p class="text-sm text-slate-500">LLMs, Prompt Engineering, OpenAI APIs, Hugging Face, AI Agents Architecture.</p>
+                <ul class="list-disc ml-5 space-y-2 text-slate-700 text-sm">
+                    <li>Drive development of hybrid cloud solutions leading 14+ professionals globally.</li>
+                    <li>Conduct code reviews, design modular proof-of-concepts, and ensure quality deployments.</li>
+                    <li>Tech Stack: React, TypeScript, Docker, Kubernetes, Jenkins, AWS, and VMware.</li>
+                    <li>Awarded <strong>Software Quality Engineering Excellence</strong> and <strong>Strategy Champion</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">Sr. Front End Developer</h3>
+                        <p class="text-blue-600 font-medium">K4Connect (IoT Startup)</p>
+                    </div>
+                    <span class="text-sm bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Jan 2017 — Jun 2019</span>
                 </div>
-                <div class="p-6 rounded-2xl bg-cyan-50 border border-cyan-100">
-                    <i data-lucide="cloud" class="text-cyan-600 mb-4"></i>
-                    <h5 class="font-bold mb-2">Cloud & Infra</h5>
-                    <p class="text-sm text-slate-500">AWS (re:Invent Delegate), Azure AI, Docker, Kubernetes, Private Cloud.</p>
+                <p class="text-sm text-slate-600 mb-4 italic">Focus: Senior Care, IoT, Smart Home Management</p>
+                <ul class="list-disc ml-5 space-y-2 text-slate-700 text-sm">
+                    <li>Integrated Alexa devices at enterprise scale for senior living communities.</li>
+                    <li>Managed IoT fleet monitoring using Zigbee, Z-Wave, and Bluetooth protocols.</li>
+                    <li>Optimized and decoupled legacy dashboards using Sencha ExtJS and React Native.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">Technology Lead / Analyst</h3>
+                        <p class="text-blue-600 font-medium">Infosys & Fidelity Investments</p>
+                    </div>
+                    <span class="text-sm bg-slate-100 text-slate-600 px-3 py-1 rounded-full">2007 — 2017</span>
                 </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <i data-lucide="database" class="text-slate-600 mb-4"></i>
-                    <h5 class="font-bold mb-2">Backend & DB</h5>
-                    <p class="text-sm text-slate-500">Node.js, Python FastAPI, .NET MVC, SQL Server, MongoDB, MongoDB.</p>
+                <ul class="list-disc ml-5 space-y-2 text-slate-700 text-sm">
+                    <li>Led migration of legacy financial applications (C++, ASP) to .NET MVC4, Angular, and Kendo UI.</li>
+                    <li>Served as <strong>Security Auditor</strong> for Offshore Development Centers.</li>
+                    <li>Expertise in SQL Server 2012, Sybase, and production support for US banks.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-20">
+            <h2 class="section-title"><i data-lucide="lightbulb" class="text-blue-600"></i> Innovation Spotlight</h2>
+            <div class="bg-gradient-to-r from-blue-900 to-slate-900 rounded-3xl p-10 text-white shadow-2xl">
+                <h3 class="text-2xl font-bold mb-2">Cisco AI Hackathon 2025: DocEngine</h3>
+                <p class="text-blue-200 font-medium mb-6">Winner | AI-Powered Support Agent</p>
+                <p class="mb-6 opacity-90 leading-relaxed">
+                    Developed an intelligent agent system combining OpenAI LLMs and Cisco Webex APIs to create a <strong>Human-in-the-loop</strong> feedback system. This solution modernizes internal support by allowing AI agents to learn from real-time human feedback (thumbs up/down), reducing documentation overhead significantly.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-white/10 rounded-lg text-sm">Python FastAPI</span>
+                    <span class="px-4 py-2 bg-white/10 rounded-lg text-sm">Vector DB</span>
+                    <span class="px-4 py-2 bg-white/10 rounded-lg text-sm">NLP Prompt Engineering</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="py-24 bg-slate-50 text-slate-900">
-        <div class="max-w-4xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-16">Work Experience</h3>
-            <div class="space-y-12 relative border-l-2 border-slate-200 pl-8">
-                <div class="relative">
-                    <div class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white"></div>
-                    <div class="mb-2 flex justify-between">
-                        <span class="font-bold text-lg">Technical Team Lead @ Cisco</span>
-                        <span class="text-slate-500 text-sm">2019 — Present</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mb-4">Leading a global team of 14+ engineers. Spearheading hybrid cloud solutions, enterprise infrastructure, and Generative AI integration.</p>
+        <section class="mb-20">
+            <h2 class="section-title"><i data-lucide="heart" class="text-blue-600"></i> Community Impact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900">Habitat for Humanity</h4>
+                    <p class="text-xs text-slate-400 mb-2">Construction Associate | Raleigh/GTA</p>
+                    <p class="text-sm text-slate-600 italic">"Installed windows and sidings in the peak of summer heat to help build affordable housing."</p>
                 </div>
-                <div class="relative">
-                    <div class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white"></div>
-                    <div class="mb-2 flex justify-between">
-                        <span class="font-bold text-lg">Sr. Front End Developer @ K4Connect</span>
-                        <span class="text-slate-500 text-sm">2017 — 2019</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mb-4">Startup environment. IoT ecosystem for Senior Living. Integrated Alexa at scale and developed IoT fleet management dashboards.</p>
-                </div>
-                <div class="relative">
-                    <div class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white"></div>
-                    <div class="mb-2 flex justify-between">
-                        <span class="font-bold text-lg">Technology Lead @ Infosys (Fidelity)</span>
-                        <span class="text-slate-500 text-sm">2007 — 2017</span>
-                    </div>
-                    <p class="text-slate-600 text-sm">A decade of growth. From Security Auditor to .NET/Full-Stack lead for major financial institutions.</p>
+                <div class="bg-white p-6 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900">HackNCAT 7.0 Organizer & Judge</h4>
+                    <p class="text-xs text-slate-400 mb-2">NC A&T State University</p>
+                    <p class="text-sm text-slate-600">Mentored students, monitored brainstorm sessions, and judged final winners to motivate the next generation of IT talent.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-slate-500 text-sm">© 2026 Dharmendra Singh. Built with passion & strategic design.</p>
-            <div class="flex gap-6">
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="linkedin"></i></a>
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="github"></i></a>
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="mail"></i></a>
+        <section class="mb-20">
+            <h2 class="section-title"><i data-lucide="thumbs-up" class="text-blue-600"></i> Colleague Praise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-100 p-6 rounded-2xl relative">
+                    <i data-lucide="quote" class="absolute top-4 right-4 text-slate-200 w-12 h-12"></i>
+                    <p class="text-sm text-slate-600 italic mb-4">"Dharmendra is a talented and skilled frontend developer who can create engaging and user-friendly applications... reliable and professional in meeting deadlines."</p>
+                    <p class="text-xs font-bold">— Guoyang Di, Software Engineer @ Cisco</p>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-2xl relative">
+                    <i data-lucide="quote" class="absolute top-4 right-4 text-slate-200 w-12 h-12"></i>
+                    <p class="text-sm text-slate-600 italic mb-4">"His determination, technical and team contributions make him a great asset for any organisation. A good mentor and excellent leader."</p>
+                    <p class="text-xs font-bold">— Aditya Tomar, Business Growth Expert</p>
+                </div>
             </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12 text-center">
+        <p class="text-lg font-bold">Dharmendra Singh</p>
+        <p class="text-slate-400 text-sm mt-2">Technical Lead | Morrisville, NC | 17+ Years of Excellence</p>
+        <div class="flex justify-center gap-6 mt-6">
+            <a href="#" class="hover:text-blue-400"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="hover:text-blue-400"><i data-lucide="github"></i></a>
         </div>
     </footer>
 
@@ -185,5 +213,3 @@ The layout highlights your dual identity as an elite Technical Lead and your per
     </script>
 </body>
 </html>
-
-```
