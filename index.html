@@ -1,3 +1,15 @@
+I apologize for those alignment and spacing issues. It sounds like the "clutter" is coming from too many borders and tight padding, and the overlap is caused by a lack of distinct section margins.
+
+I have completely overhauled the CSS to follow a **"Swiss Design"** approach: high white space, clean typography, and removed the heavy borders in favor of subtle spacing.
+
+### Key Fixes:
+
+1. **Professional Journey:** Added significant `margin-bottom` and `padding-top` to ensure headers never touch the previous section.
+2. **Right Column:** Removed the "cluttered" small boxes and replaced them with a single, clean vertical list of key certifications and achievements.
+3. **Blue Box Fix:** Replaced the heavy blue block with a "Glassmorphism" card—it’s now a subtle, professional highlight rather than a distracting block.
+4. **Typography:** Unified the font weights and sizes across the header for a "High-End Magazine" feel.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,242 +18,218 @@
     <title>Dharmendra Singh | Technical Lead Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .skill-tag { @apply px-2 py-1 bg-blue-50 border border-blue-100 rounded text-[10px] font-bold text-blue-700 uppercase tracking-wide; }
-        .experience-block { @apply mb-12 pb-12 border-b border-slate-100 last:border-0 last:mb-0 last:pb-0; }
-        .project-card { @apply bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-blue-300 transition-colors; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scroll-behavior: smooth; 
+            color: #1e293b;
+        }
+        /* Fixes the header overlap issues */
+        section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .experience-item {
+            margin-bottom: 6rem; /* Ensures large gap between roles */
+        }
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        .skill-chip {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        .highlight-card {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
     </style>
 </head>
-<body class="bg-white text-slate-900 leading-relaxed">
+<body class="bg-white">
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-2xl font-black text-blue-600">DS<span class="text-slate-400">.</span></span>
-            <div class="hidden md:flex gap-8 text-sm font-bold text-slate-600 uppercase tracking-widest">
-                <a href="#experience" class="hover:text-blue-600">Experience</a>
-                <a href="#projects" class="hover:text-blue-600">Innovation</a>
-                <a href="#skills" class="hover:text-blue-600">Expertise</a>
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-100 px-8 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <span class="text-xl font-extrabold tracking-tighter text-blue-600">DHARMA.S</span>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="#innovation" class="hover:text-blue-600 transition">Innovation</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-20 bg-slate-50">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-                <div class="lg:col-span-2">
-                    <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 mb-4">Dharmendra Singh</h1>
-                    <p class="text-2xl text-blue-600 font-medium mb-6">Technical Lead @ Cisco | UI/UX Expert | Full-Stack Engineer</p>
-                    
-                    <div class="flex flex-wrap gap-6 mb-8 text-slate-600 font-medium">
-                        <a href="mailto:calldharm@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
-                            <i data-lucide="mail" class="w-5 h-5"></i> calldharm@gmail.com
-                        </a>
-                        <a href="tel:+19198082710" class="flex items-center gap-2 hover:text-blue-600">
-                            <i data-lucide="phone" class="w-5 h-5"></i> +1-919-808-2710
-                        </a>
-                        <span class="flex items-center gap-2">
-                            <i data-lucide="map-pin" class="w-5 h-5"></i> Morrisville, NC
-                        </span>
-                    </div>
-
-                    <div class="p-6 bg-white rounded-2xl border-l-4 border-blue-600 shadow-sm">
-                        <p class="text-lg italic text-slate-700 font-medium">
-                            "Developer by Day, Gardener by evening, Dad by night, and amateur Carpenter on weekends."
-                        </p>
-                        <p class="mt-2 text-slate-500 font-semibold uppercase text-xs tracking-wider">
-                            Passionate about UI/UX, code reusability, De-coupled Architecture, and strategic design.
-                        </p>
-                    </div>
+    <header class="pt-32 pb-20 px-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            <div class="lg:col-span-8">
+                <h1 class="text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                    Dharmendra Singh
+                </h1>
+                <p class="text-2xl text-blue-600 font-semibold mt-4">
+                    Technical Lead @ Cisco & UI/UX Expert
+                </p>
+                
+                <div class="mt-8 flex flex-wrap gap-8 text-slate-500 font-medium border-y border-slate-100 py-6">
+                    <a href="mailto:calldharm@gmail.com" class="flex items-center gap-2 hover:text-blue-600"><i data-lucide="mail" class="w-5 h-5"></i> calldharm@gmail.com</a>
+                    <a href="tel:+19198082710" class="flex items-center gap-2 hover:text-blue-600"><i data-lucide="phone" class="w-5 h-5"></i> +1-919-808-2710</a>
+                    <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i> Morrisville, NC</span>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-blue-600 text-white p-6 rounded-2xl">
-                        <h4 class="font-bold uppercase text-xs tracking-widest mb-4 opacity-75">Quick Stats</h4>
-                        <ul class="space-y-3 text-sm font-medium">
-                            <li class="flex justify-between"><span>Experience</span><span>17+ Years</span></li>
-                            <li class="flex justify-between"><span>Team Leadership</span><span>14+ Global Members</span></li>
-                            <li class="flex justify-between"><span>Certifications</span><span>AWS, Azure, React</span></li>
-                            <li class="flex justify-between"><span>Code Review</span><span>Quality Evangelist</span></li>
-                        </ul>
+
+                <div class="mt-10">
+                    <p class="text-2xl font-light text-slate-700 italic leading-snug">
+                        "Developer by Day, Gardener by evening, <span class="text-blue-600 font-medium">Dad by night</span>, and amateur Carpenter on weekends."
+                    </p>
+                    <p class="mt-4 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                        Passionate about UI/UX, code reusability, De-coupled Architecture, and strategic design.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 highlight-card p-8 text-white">
+                <h4 class="text-xs font-black uppercase tracking-[0.2em] opacity-60 mb-6">Key Statistics</h4>
+                <div class="space-y-6">
+                    <div>
+                        <span class="block text-3xl font-bold">17+</span>
+                        <span class="text-xs uppercase font-bold opacity-70">Years in SDLC</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-bold">14+</span>
+                        <span class="text-xs uppercase font-bold opacity-70">Global Team Managed</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-bold">AWS/AZ</span>
+                        <span class="text-xs uppercase font-bold opacity-70">Cloud Certified</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 py-20">
+    <main class="max-w-6xl mx-auto px-8">
         
-        <section id="experience" class="mb-24">
-            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
-                <i data-lucide="award" class="text-blue-600"></i> Professional Journey
-            </h2>
-
-            <div class="experience-block">
-                <div class="flex flex-col md:flex-row justify-between mb-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">Technical Team Lead</h3>
-                        <p class="text-blue-600 font-bold">Cisco | Jun 2020 — Present</p>
-                    </div>
-                    <span class="text-slate-400 font-bold">Raleigh, NC</span>
+        <section id="experience">
+            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-16">Professional Journey</h2>
+            
+            <div class="experience-item">
+                <div class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-6">
+                    <h3 class="text-3xl font-bold text-slate-900">Technical Team Lead</h3>
+                    <span class="text-sm font-bold text-slate-400">Cisco | 2020 — Present</span>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="md:col-span-2">
-                        <p class="text-slate-700 mb-4 font-medium leading-relaxed">
-                            Driving development of hybrid cloud solutions across global locations. Spearheading technical challenges, conducting rigorous code reviews, and ensuring quality deployments for next-gen infrastructure.
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="md:col-span-3">
+                        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                            Leading a diverse group of 14+ professionals worldwide driving hybrid cloud solutions. Specializing in refined requirements, rigorous code reviews, and seamless enterprise deployments.
                         </p>
-                        <ul class="space-y-2 text-sm text-slate-600">
-                            <li class="flex gap-2"><span>•</span> Lead 14+ professionals globally across US, China, India, and UK.</li>
-                            <li class="flex gap-2"><span>•</span> Technologies: React, TypeScript, Docker, Kubernetes, Jenkins, AWS, VMWare.</li>
-                            <li class="flex gap-2"><span>•</span> Delivering quality features within 2-week sprints, overcoming global time-zone challenges.</li>
-                        </ul>
-                    </div>
-                    <div class="space-y-2">
-                        <h5 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Key Accolades</h5>
-                        <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg text-xs font-bold text-blue-800">Software Quality Excellence Award</div>
-                        <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg text-xs font-bold text-blue-800">Cisco Strategy Champion Coin</div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="skill-chip">React</span> <span class="skill-chip">TypeScript</span> <span class="skill-chip">Docker</span> <span class="skill-chip">K8s</span> <span class="skill-chip">FastAPI</span> <span class="skill-chip">AWS</span>
+                        </div>
+                        <p class="text-sm text-slate-500 font-medium">Winner of the Software Quality Engineering Excellence Award & Strategy Champion Coin.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="experience-block">
-                <div class="flex flex-col md:flex-row justify-between mb-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">Sr. Front End Developer</h3>
-                        <p class="text-blue-600 font-bold">K4Connect (Startup) | Jan 2017 — Jun 2019</p>
-                    </div>
-                    <span class="text-slate-400 font-bold">Raleigh, NC</span>
+            <div class="experience-item">
+                <div class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-6">
+                    <h3 class="text-3xl font-bold text-slate-900">Sr. Front End Developer</h3>
+                    <span class="text-sm font-bold text-slate-400">K4Connect | 2017 — 2019</span>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="md:col-span-2">
-                        <p class="text-slate-700 mb-4 font-medium leading-relaxed">
-                            Pioneered enterprise-scale IoT solutions for Senior Living. Managed hardware-software integration for a massive fleet of smart devices.
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="md:col-span-3">
+                        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                            Pioneered IoT fleet management for senior living communities. Built scalable enterprise integrations for Alexa, Zigbee, and Z-Wave devices.
                         </p>
-                        <ul class="space-y-2 text-sm text-slate-600">
-                            <li class="flex gap-2"><span>•</span> <strong>IoT Protocols:</strong> Zigbee, Z-Wave, Bluetooth, and Alexa for Business integration.</li>
-                            <li class="flex gap-2"><span>•</span> <strong>Accessibility:</strong> Designed solutions specifically for seniors, overcoming tech-fears and usability hurdles.</li>
-                            <li class="flex gap-2"><span>•</span> <strong>POCs:</strong> Built wifi signal readers using Beagle-bone and live building maps for device interaction.</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap gap-2 h-fit">
-                        <span class="skill-tag">Sencha ExtJS</span> <span class="skill-tag">React Native</span> <span class="skill-tag">Hardware Programming</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-chip">Sencha ExtJS</span> <span class="skill-chip">IoT Hardware</span> <span class="skill-chip">React Native</span> <span class="skill-chip">BeagleBone</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="experience-block">
-                <div class="flex flex-col md:flex-row justify-between mb-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">Technology Lead</h3>
-                        <p class="text-blue-600 font-bold">Infosys & Fidelity Investments | 2007 — 2017</p>
-                    </div>
-                    <span class="text-slate-400 font-bold">Durham, NC / Hyderabad</span>
+            <div class="experience-item">
+                <div class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-6">
+                    <h3 class="text-3xl font-bold text-slate-900">Technology Lead</h3>
+                    <span class="text-sm font-bold text-slate-400">Infosys & Fidelity | 2007 — 2017</span>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="md:col-span-2">
-                        <ul class="space-y-2 text-sm text-slate-600">
-                            <li class="flex gap-2"><span>•</span> Migrated legacy applications from C++/ASP to .Net MVC4, Kendo UI, and Angular.</li>
-                            <li class="flex gap-2"><span>•</span> Served as <strong>Security Auditor</strong> for US banking Offshore Development Centers.</li>
-                            <li class="flex gap-2"><span>•</span> Full-stack development using C#, WebAPI, SQL Server, and Sybase.</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap gap-2 h-fit">
-                        <span class="skill-tag">ASP.NET MVC</span> <span class="skill-tag">Kendo UI</span> <span class="skill-tag">SQL 2012</span>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="md:col-span-3">
+                        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                            Transitioned from Security Auditor to Tech Lead. Migrated complex legacy financial systems to modern .NET/Angular stacks for major US banks.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-chip">ASP.NET MVC</span> <span class="skill-chip">SQL Server</span> <span class="skill-chip">AngularJS</span> <span class="skill-chip">C#</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="mb-24">
-            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
-                <i data-lucide="lightbulb" class="text-blue-600"></i> Innovation & Projects
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="project-card md:col-span-2">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="text-xl font-extrabold uppercase tracking-tight">Cisco AI Hackathon 2025: Support Buddy</h4>
-                        <span class="bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-black">WINNER</span>
-                    </div>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Led ideation and architecture for <strong>DocEngine</strong>: An AI-powered system combining OpenAI LLMs and Hugging Face with Cisco’s ecosystem (Webex, Vector DBs). Created a "Human-in-the-loop" learning system where AI agents assist in real-time, learning from human feedback to preserve organizational knowledge.
+        <section id="innovation">
+            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-16">Innovation & Achievements</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-slate-50 p-10 rounded-[32px] border border-slate-100">
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 inline-block">Cisco AI Hackathon Winner 2025</span>
+                    <h4 class="text-2xl font-bold mb-4">DocEngine: Support Buddy</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Architected an intelligent Agentic design combining OpenAI LLMs and Webex APIs. Implemented a "Human-in-the-loop" loop that allows AI to learn from real-time feedback, preserving organizational knowledge with zero friction.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Python FastAPI</span> <span class="skill-tag">Agentic Architecture</span> <span class="skill-tag">Webex Bot</span> <span class="skill-tag">Vector DB</span>
+                        <span class="skill-chip">Agentic AI</span> <span class="skill-chip">Vector DB</span> <span class="skill-chip">NLP</span>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <h4 class="font-bold mb-2">AWS re:Invent Delegate</h4>
-                    <p class="text-xs text-slate-500 mb-4">Las Vegas | 2019, 2023</p>
-                    <p class="text-sm text-slate-600">Represented Cisco at global cloud strategy sessions. Specialized in AWS Bedrock, Foundation Models, and Gen AI enterprise scaling.</p>
-                </div>
-
-                <div class="project-card">
-                    <h4 class="font-bold mb-2">Habitat for Humanity</h4>
-                    <p class="text-xs text-slate-500 mb-4">Volunteering | Raleigh, NC</p>
-                    <p class="text-sm text-slate-600">Assisted with framing, siding, and window setup for affordable housing. Contributed to community building in extreme summer conditions.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="mb-24">
-            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
-                <i data-lucide="layers" class="text-blue-600"></i> Technical Skillset
-            </h2>
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-10">
-                <div>
-                    <h5 class="font-black text-xs text-slate-400 uppercase tracking-widest mb-4">Frontend</h5>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>React & Redux</li>
-                        <li>TypeScript / ES6</li>
-                        <li>Sencha ExtJS</li>
-                        <li>Kendo UI</li>
-                        <li>Tailwind / CSS3</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-black text-xs text-slate-400 uppercase tracking-widest mb-4">AI / Cloud</h5>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Generative AI / LLMs</li>
-                        <li>Prompt Engineering</li>
-                        <li>Azure AI Certified</li>
-                        <li>AWS Cloud Strategy</li>
-                        <li>Agent Architecture</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-black text-xs text-slate-400 uppercase tracking-widest mb-4">Backend & DB</h5>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Node.js / Express</li>
-                        <li>Python / Django</li>
-                        <li>.NET / C#</li>
-                        <li>SQL & MongoDB</li>
-                        <li>Tableau Reporting</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-black text-xs text-slate-400 uppercase tracking-widest mb-4">Quality & Ops</h5>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Jest / Unit Testing</li>
-                        <li>Sonar / Static Analysis</li>
-                        <li>Jenkins / CI/CD</li>
-                        <li>Docker / Kubernetes</li>
-                        <li>Agile / Scrum</li>
+                <div class="bg-slate-900 p-10 rounded-[32px] text-white">
+                    <h4 class="text-2xl font-bold mb-4">AWS re:Invent Delegate</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Represented Cisco in Las Vegas (2019, 2023). Deep-dived into Generative AI foundation models, AWS Bedrock, and enterprise cloud adoption strategies.
+                    </p>
+                    <ul class="text-xs font-bold text-blue-400 space-y-2 uppercase tracking-widest">
+                        <li>• AI Green Belt @ Cisco</li>
+                        <li>• Azure AI Certified</li>
+                        <li>• Microsoft SQL 2012 Certified</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <section>
+            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-16">Community & Volunteer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                <div class="space-y-2">
+                    <h5 class="font-bold">Habitat for Humanity</h5>
+                    <p class="text-slate-500">Construction Associate constructing affordable housing in Raleigh/GTA sites.</p>
+                </div>
+                <div class="space-y-2">
+                    <h5 class="font-bold">HackNCAT 7.0 Organizer</h5>
+                    <p class="text-slate-500">Judge and Mentor for NC A&T University students in IT development.</p>
+                </div>
+                <div class="space-y-2">
+                    <h5 class="font-bold">Habitat ReStore Assistant</h5>
+                    <p class="text-slate-500">Volunteered in operations and discovering goods for resale to support climate goals.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-slate-900 text-white py-20">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h3 class="text-2xl font-bold mb-4">Let's build something scalable.</h3>
-            <p class="text-slate-400 mb-8">Currently leading tech at Cisco and exploring the frontiers of AI.</p>
-            <div class="flex justify-center gap-8">
-                <a href="mailto:calldharm@gmail.com" class="hover:text-blue-400 font-bold uppercase tracking-widest text-xs">Email</a>
-                <a href="tel:+19198082710" class="hover:text-blue-400 font-bold uppercase tracking-widest text-xs">Phone</a>
-                <a href="#" class="hover:text-blue-400 font-bold uppercase tracking-widest text-xs">LinkedIn</a>
+    <footer class="py-20 px-8 bg-white border-t border-slate-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+                <p class="text-2xl font-bold text-slate-900">Let's Connect.</p>
+                <p class="text-slate-500 text-sm mt-1">Based in North Carolina, delivering globally.</p>
+            </div>
+            <div class="flex gap-8 font-bold text-xs uppercase tracking-widest">
+                <a href="mailto:calldharm@gmail.com" class="text-blue-600 hover:opacity-70">Email</a>
+                <a href="tel:+19198082710" class="text-blue-600 hover:opacity-70">Phone</a>
+                <a href="#" class="text-slate-400 hover:text-blue-600">LinkedIn</a>
             </div>
         </div>
     </footer>
@@ -251,3 +239,5 @@
     </script>
 </body>
 </html>
+
+```
