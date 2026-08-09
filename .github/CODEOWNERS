@@ -1,0 +1,13 @@
+# CODEOWNERS
+
+Create a CODEOWNERS file to require review approval from the repository owner for all changes.
+
+Syntax:
+
+* @calldharm
+
+Place this file at: .github/CODEOWNERS
+
+Notes:
+- This alone doesn't block direct pushes. To fully protect the main branch, enable branch protection rules in the repository settings and enable "Require pull request reviews before merging" and "Require review from Code Owners".
+- You can also restrict who can push to the main branch using branch protection settings (recommended).
